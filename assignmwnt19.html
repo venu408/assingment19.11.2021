@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <div class="result text-center d-none">
+         <div class="jumbotron lead">
+             <p>your's score is</p>
+         </div>
+      </div>
+
+
+    <div class="container bg-secondary">
+        <h3><u>Choose the correct answers</u></h3>
+        <form action="">
+          <div class="my-5">
+               <p>1.IAS stands for </p>
+               <div class="form-check">
+                  <input class="form-check-input" type="radio" name="q1" id=""  value="A">
+                    <label class="form-check-label" for="">Indian administrate service</label>
+               </div>
+               <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id=""  value="B">
+                  <label class="form-check-label" for="">Indian </label>
+             </div>
+             <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id=""  value="C">
+                  <label class="form-check-label" for="">Indian  service</label>
+             </div>
+             <div class="form-check">
+                <input class="form-check-input" type="radio" name="q1" id=""  value="D">
+                  <label class="form-check-label" for="">Indian administrate</label>
+             </div>
+          </div> 
+          <div class="my-5">
+            <p>2.IPS stands for</p>
+            <div class="form-check">
+               <input class="form-check-input" type="radio" name="q2" id=""  value="A">
+                 <label class="form-check-label" for="">Indian POLICE service</label>
+            </div>
+            <div class="form-check">
+             <input class="form-check-input" type="radio" name="q2" id=""  value="B">
+               <label class="form-check-label" for="">Indian </label>
+          </div>
+          <div class="form-check">
+             <input class="form-check-input" type="radio" name="q2" id=""  value="C">
+               <label class="form-check-label" for="">Indian  service</label>
+          </div>
+          <div class="form-check">
+             <input class="form-check-input" type="radio" name="q2" id=""  value="D">
+               <label class="form-check-label" for="">Indian administrate</label>
+          </div>
+       </div> 
+       <div class="my-5">
+        <p>3.IIT stands for</p>
+        <div class="form-check">
+           <input class="form-check-input" type="radio" name="q3" id=""  value="A">
+             <label class="form-check-label" for="">Indian INSTITUTE OF TECHNOLOGY</label>
+        </div>
+        <div class="form-check">
+         <input class="form-check-input" type="radio" name="q3" id=""  value="B">
+           <label class="form-check-label" for="">Indian </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="q3" id=""  value="C">
+           <label class="form-check-label" for="">Indian  service</label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="radio" name="q3" id=""  value="D">
+           <label class="form-check-label" for="">Indian administrate</label>
+      </div>
+   </div> 
+   <div class="my-5">
+    <p>4.RAW stands for</p>
+    <div class="form-check">
+       <input class="form-check-input" type="radio" name="q4" id="" value="A">
+         <label class="form-check-label" for="">REASEARCH AND ANALYSIS WING</label>
+    </div>
+    <div class="form-check">
+     <input class="form-check-input" type="radio" name="q4" id=""  value="B">
+       <label class="form-check-label" for="">Indian </label>
+  </div>
+  <div class="form-check">
+     <input class="form-check-input" type="radio" name="q4" id=""  value="C">
+       <label class="form-check-label" for="">Indian  service</label>
+  </div>
+  <div class="form-check">
+     <input class="form-check-input" type="radio" name="q4" id=""  value="D">
+       <label class="form-check-label" for="">Indian administrate</label>
+  </div>
+</div> 
+<input class="btn btn-success" type="submit" value="Login">
+        </form>
+    </div>
+    
+    <script>
+        var key=['A','A','A','A'];
+        var r1=document.querySelector('.result');
+      var f1=document.querySelector('form');
+     
+      f1.addEventListener('submit',function(e){
+        
+          e.preventDefault();
+          var score=0;
+      
+        const users=[f1.q1.value,f1.q2.value,f1.q3.value,f1.q4.value];
+        
+        users.forEach(function(u1,index){
+             
+            console.log(u1===key[index]);
+           if(u1===key[index]){
+    score+=25;
+           }
+           
+        })
+        
+        console.log(score);
+        scrollTo(0,0);
+        r1.classList.remove('d-none');
+      r1.querySelector('span').textContent=score;
+    
+      })
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
